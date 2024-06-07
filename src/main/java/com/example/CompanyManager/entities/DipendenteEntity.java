@@ -42,12 +42,10 @@ public class DipendenteEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_ruolo")
-    @JsonBackReference
     private RuoloEntity ruolo;
 
     @ManyToOne
     @JoinColumn(name = "id_mansione")
-    @JsonBackReference
     private MansioneEntity mansione;
 
     @ManyToMany(mappedBy = "dipendenti")

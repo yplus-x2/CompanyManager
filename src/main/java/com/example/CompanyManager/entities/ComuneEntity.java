@@ -33,13 +33,13 @@ public class ComuneEntity implements Serializable {
     private String siglaProv;
 
     @Column(name = "provincia")
-    private String denominazioneProv;
+    private String provincia;
 
     @Column(name = "sigla_regione")
     private String siglaReg;
 
     @Column(name = "regione")
-    private String denominazioneReg;
+    private String regione;
 
     @Column(name = "cod_catastale")
     private String codCatastale;
