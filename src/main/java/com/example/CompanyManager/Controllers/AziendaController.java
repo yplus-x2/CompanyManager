@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-    @RestController
-    @RequestMapping("/api/azienda")
-    public class AziendaController {
+@RestController
+@RequestMapping("/api/azienda")
+public class AziendaController {
 
-        @Autowired
-        private AziendaService aziendaService;
+    @Autowired
+    private AziendaService aziendaService;
 
-        @GetMapping("/getAzienda")
-        public ResponseEntity<AziendaEntity> getAzienda() {
-            AziendaEntity azienda = aziendaService.getAzienda();
-            return new ResponseEntity<>(azienda, HttpStatus.OK);
-        }
+    @GetMapping("/getAzienda")
+    public ResponseEntity<AziendaEntity> getAzienda() {
+        AziendaEntity azienda = aziendaService.getAzienda();
+        return new ResponseEntity<>(azienda, HttpStatus.OK);
     }
+}
 
