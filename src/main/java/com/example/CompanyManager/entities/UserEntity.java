@@ -1,12 +1,10 @@
 package com.example.CompanyManager.entities;
 
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.apachecommons.CommonsLog;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -38,6 +36,6 @@ public class UserEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_azienda")
-    @JsonManagedReference
+    @JsonBackReference
     private AziendaEntity azienda;
 }
