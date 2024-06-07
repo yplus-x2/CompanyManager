@@ -29,16 +29,16 @@ public class ComuneEntity implements Serializable {
     @Column(name = "denominazione")
     private String denominazione;
 
-    @Column(name = "sigla_prov")
+    @Column(name = "sigla_provincia")
     private String siglaProv;
 
-    @Column(name = "denominazione_prov")
+    @Column(name = "provincia")
     private String denominazioneProv;
 
-    @Column(name = "sigla_reg")
+    @Column(name = "sigla_regione")
     private String siglaReg;
 
-    @Column(name = "denominazione_reg")
+    @Column(name = "regione")
     private String denominazioneReg;
 
     @Column(name = "cod_catastale")
@@ -46,6 +46,6 @@ public class ComuneEntity implements Serializable {
 
     @OneToMany(mappedBy = "comune")
     @JsonBackReference
-    private List<ComuneEntity> comuni;
+    private List<SedeEntity> sedi;
 
 }

@@ -1,14 +1,11 @@
 package com.example.CompanyManager.entities;
 
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.tomcat.util.http.parser.MediaType;
 
-import java.awt.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
@@ -19,7 +16,6 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name = "azienda")
 public class AziendaEntity implements Serializable {
-
 
     @Serial
     private static final long serialVersionUID = 5386653174338270662L;
@@ -40,16 +36,15 @@ public class AziendaEntity implements Serializable {
     @Column(name = "settore")
     private String settore;
 
-    @OneToMany(mappedBy = "azienda")
-    @JsonBackReference
+    @OneToMany(mappedBy = "azienda", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<UserEntity> users;
 
-    @OneToMany(mappedBy = "azienda")
-    @JsonBackReference
+    @OneToMany(mappedBy = "azienda", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<SedeEntity> sedi;
 
-    @OneToMany(mappedBy = "azienda")
-    @JsonBackReference
+    @OneToMany(mappedBy = "azienda", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<DipendenteEntity> dipendenti;
-
 }
