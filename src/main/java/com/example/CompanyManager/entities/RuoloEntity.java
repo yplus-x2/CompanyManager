@@ -1,6 +1,5 @@
 package com.example.CompanyManager.entities;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,6 +27,5 @@ public class RuoloEntity implements Serializable {
     private String descrizione;
 
     @OneToMany(mappedBy = "ruolo", cascade = CascadeType.ALL)
-    @JsonManagedReference
     private List<DipendenteEntity> dipendenti;
 }
