@@ -1,5 +1,7 @@
 package com.example.CompanyManager.Controllers;
 
+import com.example.CompanyManager.Components.AziendaComponent;
+import com.example.CompanyManager.dtos.AziendaDto;
 import com.example.CompanyManager.entities.AziendaEntity;
 import com.example.CompanyManager.services.AziendaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class AziendaController {
 
     @Autowired
-    private AziendaService aziendaService;
+    private AziendaComponent aziendaComponent;
 
     @GetMapping("/getAzienda")
-    public ResponseEntity<AziendaEntity> getAzienda() {
-        AziendaEntity azienda = aziendaService.getAzienda();
+    public ResponseEntity<?> getAzienda() {
+        AziendaDto azienda = aziendaComponent.getInformation();
         return new ResponseEntity<>(azienda, HttpStatus.OK);
     }
 }

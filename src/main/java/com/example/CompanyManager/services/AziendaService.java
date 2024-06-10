@@ -1,5 +1,6 @@
 package com.example.CompanyManager.services;
 
+import com.example.CompanyManager.dtos.AziendaDto;
 import com.example.CompanyManager.entities.*;
 import com.example.CompanyManager.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
