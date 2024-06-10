@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
+@Table(name = "utente")
 public class UserEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = -281780998799291511L;

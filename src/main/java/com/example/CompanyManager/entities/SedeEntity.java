@@ -36,7 +36,7 @@ public class SedeEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_comune")
-    @JsonBackReference
+    @JsonManagedReference
     private ComuneEntity comune;
 
     @ManyToMany
